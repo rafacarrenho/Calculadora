@@ -1,19 +1,8 @@
 import React, { useState } from "react";
-import styled from "styled-components";
-import Button from "./Button";
-import Display from "./Display";
-const CalculatorContainer = styled.div`
-  height: 350px;
-  width: 235px;
-  border-radius: 5px;
-  overflow: hiden;
-  display: grid;
-  grid-template-columns: repeat(4, 25%);
-  grid-template-rows: 1fr 48px 48px 48px 48px 48px;
-`;
-const H1 = styled.h1`
-  color: white;
-`;
+import Button from "../Button";
+import Display from "../Display";
+import * as S from "./styles";
+
 const Calculator = () => {
   const [operation, setOperation] = useState(null);
   const [values, setValues] = useState([0, 0]);
@@ -107,8 +96,7 @@ const Calculator = () => {
 
   return (
     <>
-      <H1>Calculadora</H1>
-      <CalculatorContainer>
+      <S.CalculatorContainer>
         <Display last={last} values={values}></Display>
         <Button click={clearMemory} grid="triple" label="AC"></Button>
         <Button click={addOperation} operation label="/"></Button>
@@ -127,7 +115,7 @@ const Calculator = () => {
         <Button click={addDigit} grid="double" label="0"></Button>
         <Button click={addDigit} label="."></Button>
         <Button click={addOperation} operation label="="></Button>
-      </CalculatorContainer>
+      </S.CalculatorContainer>
     </>
   );
 };
