@@ -1,5 +1,5 @@
-import React from "react";
-import * as S from "./styles";
+import React from 'react';
+import * as S from './styles';
 
 const ThemeController = ({ currentTheme, changeTheme }) => {
   return (
@@ -7,11 +7,11 @@ const ThemeController = ({ currentTheme, changeTheme }) => {
       Dark Mode
       <S.Switch>
         <input
-          type="checkbox"
+          type='checkbox'
           checked={currentTheme}
           onChange={() => changeTheme(!currentTheme)}
         />
-        <span class="slider round"></span>
+        <span className='slider round'></span>
       </S.Switch>
     </S.Wrapper>
   );
